@@ -1,0 +1,32 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+
+// Variables
+@import "variables";
+
+// custom
+@import "custom";
+
+// Bootstrap
+//@import "~bootstrap/scss/bootstrap";
+
+//assets
+//@import '~assets/scss/style';
+
+@import "animate";
+@import "bootstrap.min";
+@import "font-awesome.min";
+//  @import "gijgo";
+//  @import "magnific-popup";
+@import "main";
+//  @import "nice-select";
+//  @import "owl.carousel";
+@import "responsive";
+//  @import "slick";
+@import "price-range";
+@import "prettyPhoto";
+//  @import "slicknav";
+//  @import "style";
+//  @import "themify-icons";
+// custom
+@import "custom";
