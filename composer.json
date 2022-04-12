@@ -20,10 +20,10 @@
         "laravel/ui": "^3.1",
         "laravelcollective/html": "^6.2",
         "livewire/livewire": "^2.8",
-        "unicodeveloper/laravel-paystack": "^1.0"
+        "unicodeveloper/laravel-paystack": "^1.0", 
+"barryvdh/laravel-debugbar": "^3.6"
     },
     "require-dev": {
-        "barryvdh/laravel-debugbar": "^3.6",
         "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.9.1",
         "mockery/mockery": "^1.4.2",
