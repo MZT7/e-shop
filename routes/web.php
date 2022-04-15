@@ -38,12 +38,12 @@ Route::get('cart', App\Http\Livewire\Shopcart::class)->name('cart')->middleware(
 // Route::get('cart', [ProductController::class, 'showCart'])->name('cart')->middleware(['auth', 'PreventBackHistory']);
 //delete item from cart
 Route::get('cart/deleteFromCart/{id}', [ProductController::class, 'deleteItemsFromCart'])->name('DeleteFromCart');
-
+Route::get('/login', [LoginController::class, 'showAdminLogin'])->name('login');
 //admin controller
 route::prefix('admin')->name('admin.')->group(function () {
 
     Route::middleware(['guest:admin', 'PreventBackHistory'])->group(function () {
-        Route::get('/login', [LoginController::class, 'showAdminLogin'])->name('login');
+
         Route::post('/login', [LoginController::class, 'adminLogin'])->name('logon');
     });
 
