@@ -21,10 +21,10 @@ class AdminSeeder extends Seeder
 
             'name' => 'Admin',
             'email' => 'duzioristo@gmail.com',
-            'email_verified_at' => now(),
-            'is_admin' => true,
+            // 'email_verified_at' => now(),
 
-            'phone_number' => '09090202853',
+
+            'phone' => '09090202853',
             'password' => bcrypt('mezu123'), //password
             'remember_token' => Str::random(10),
 
