@@ -2,6 +2,10 @@
 
 namespace Database\Factories;
 
+use App\Models\Product;
+
+use Illuminate\Support\Str;
+
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ProductFactory extends Factory
@@ -11,6 +15,10 @@ class ProductFactory extends Factory
      *
      * @return array
      */
+
+    protected $model = Product::class;
+
+
     public function definition()
     {
         return [
