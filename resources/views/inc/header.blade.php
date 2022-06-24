@@ -33,7 +33,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-4">
-                    <h1 x-data="{ message: 'I ❤️  {{ auth()->user()->name ?? '' }}' }" x-text="message"></h1>
+                    <h1 x-data="{ message: 'I ❤️ Alpinejs  {{ auth()->user()->name ?? '' }}' }" x-text="message"></h1>
 
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2"
@@ -86,33 +86,31 @@
                 <div class="col-sm-8">
                     <div class="shop-menu pull-right">
                         <ul class="nav navbar-nav">
-                            <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
-                            <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
+                            {{-- <li><a href="#"><i class="fa fa-user"></i> Account</a></li> --}}
+                            <li><a href="{{ route('products') }}"><i class="fa fa-star"></i>Home</a></li>
                             <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-                            @guest
-                                @if (Route::has('login'))
-                                    <li><a href="/login"><i class="fa fa-lock"></i> Login</a></li>
-                                @endif
+                            {{-- @guest
+                            @if (Route::has('login'))
+                            <li><a href="/login"><i class="fa fa-lock"></i> Login</a></li>
+                            @endif
 
-                                @if (Route::has('register'))
-                                    <li>
-                                        <a class="nav-link"
-                                            href="{{ route('register') }}">{{ __('Register') }}</a>
-                                    </li>
-                                @endif
+                            @if (Route::has('register'))
+                            <li>
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            </li>
+                            @endif
                             @else
-                                <livewire:cart-count />
-                                <li><a class="dropdown-item" href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
+                            @endguest --}}
+                            <livewire:cart-count />
+                            <li><a class="dropdown-item" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
                                                                                                                                                                                                                                                                          document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a></li>
+                                    {{ __('Logout') }}
+                                </a></li>
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                    class="d-none">
-                                    @csrf
-                                </form>
-                            @endguest
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
 
 
 
@@ -139,7 +137,7 @@
                             <span class="icon-bar"></span>
                         </button>
                     </div>
-                    <div class="mainmenu pull-left">
+                    {{-- <div class="mainmenu pull-left">
                         <ul class="nav navbar-nav collapse navbar-collapse">
                             <li><a href="{{ route('products') }}" class="active">Home</a></li>
                             <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
@@ -160,16 +158,17 @@
                             <li><a href="404.html">404</a></li>
                             <li><a href="contact-us.html">Contact</a></li>
                         </ul>
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="col-sm-3">
                     <div class="search_box pull-right">
-                        <form action="{{ route('search') }}" method="GET">
+                        {{-- <form action="{{ route('search') }}" method="GET">
                             @csrf
+                        </form> --}}
+                        <input type="text" wire:model.lazy='search' />
+                        {{-- {{ $search }} --}}
+                        {{-- <input type="submit" value="search"> --}}
 
-                            <input type="text" name="search" placeholder="Search" />
-                            {{-- <input type="submit" value="search"> --}}
-                        </form>
                     </div>
                 </div>
             </div>

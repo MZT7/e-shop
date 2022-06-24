@@ -19,19 +19,22 @@
     {{-- <script src="{{ mix('js/app.js') }}" defer></script> --}}
 
     <!-- Fonts -->
-    {{-- <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    {{--
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link rel="manifest" href="site.webmanifest">
     <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico"> --}}
 
     <!-- Styles -->
-    {{-- <link rel="stylesheet" href="css/owl.carousel.css">
+    {{--
+    <link rel="stylesheet" href="css/owl.carousel.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css"> --}}
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
     @livewireStyles
     {{-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> --}}
-    {{-- <link href="{{ mix('css/app.css') }}" rel="stylesheet"> --}}
+    {{--
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet"> --}}
     {{-- <script src="https://www.google.com/recaptcha/api.js?render=explicit" async defer></script> --}}
     <link rel="shortcut icon" href="images/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
@@ -43,19 +46,21 @@
 
 <body>
 
-    @include('inc.header')
 
+    @if (empty($slot))
+    @include('inc.header')
+    @endif
 
     @include('inc.messages')
-    {{-- <livewire:cart /> --}}
+    {{--
+    <livewire:cart /> --}}
     @yield('content')
 
     @if (isset($slot))
-        {{ $slot }}
-
+    {{ $slot }}
     @endif
 
-    @include('inc.footer')
+    {{-- @include('inc.footer') --}}
 
 
 

@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
+use App\Models\Admin;
 use Database\Factories\UserFactory;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
@@ -17,7 +17,7 @@ class AdminSeeder extends Seeder
     public function run()
     {
 
-        User::create([
+        Admin::create([
 
             'name' => 'Admin',
             'email' => 'duzioristo@gmail.com',

@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', App\Http\Livewire\AddProducts::class)->name('products');
 // Route::get('/products/men', [ProductController::class, 'menProducts'])->name('products.men');
 // Route::get('/products/women', [ProductController::class, 'womenProducts'])->name('products.women');
-Route::get('/search', [ProductController::class, 'search'])->name('search');
+// Route::get('/search', [ProductController::class, 'search'])->name('search');
 
 
 //add to cart
@@ -34,7 +34,8 @@ Route::get('productDetails/{id}', App\Http\Livewire\ProductDetails::class)->name
 //show cart
 Route::get('cart/inc/{id}', [ProductController::class, 'increment'])->name('cart.inc');
 Route::get('cart/dec/{id}', [ProductController::class, 'decrement'])->name('cart.dec');
-Route::get('cart', App\Http\Livewire\Shopcart::class)->name('cart')->middleware(['auth', 'PreventBackHistory']);
+Route::get('cart', App\Http\Livewire\Shopcart::class)->name('cart');
+// ->middleware(['auth', 'PreventBackHistory']);
 // Route::get('cart', [ProductController::class, 'showCart'])->name('cart')->middleware(['auth', 'PreventBackHistory']);
 //delete item from cart
 Route::get('cart/deleteFromCart/{id}', [ProductController::class, 'deleteItemsFromCart'])->name('DeleteFromCart');

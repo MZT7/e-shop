@@ -121,7 +121,7 @@ class ProductController extends Controller
     {
         $search = $request->get('search');
         $products = DB::table('products')->where('name', 'Like', "$search%")->get();
-        return view('pages.product')->with('products', $products);
+        return view('livewire.add-products')->with('products', $products);
     }
 
     public function createOrder()

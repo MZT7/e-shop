@@ -15,6 +15,7 @@ class AddProducts extends Component
     public $prod;
     public $flag = [];
     // public $cartItems;
+    public $search = '';
 
     protected $listeners = ['addToCart' => 'addToCart'];
 
@@ -74,6 +75,14 @@ class AddProducts extends Component
         // DB::table('products')->
         // $this->reset('prod');
         $this->prod = Product::where('type', '=', 'women')->get();
+        return $this->prod;
+    }
+
+    public function updatedSearch()
+    {
+        $search = $this->search;
+        $this->prod = Product::where('name', 'Like', "$search%")->get();
+
         return $this->prod;
     }
 }
